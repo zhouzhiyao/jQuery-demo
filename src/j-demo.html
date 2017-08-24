@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+<head>
+    <title>jQuery Demo</title>
+    <style>
+        .test-font-weight {
+            font-weight: bold;
+        }
+    </style>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="hello-js">Hello jQuery.</div>
+<div id="div-js">test attr</div>
+
+<div id="first">First</div>
+<div id="second">Second</div>
+<input type="button" value="ChangePosition">
+
+<button id="b_id" name="buttonName">Button</button>
+
+<abc>abc</abc>
+
+</body>
+<script>
+    $(document).ready(function () {
+        console.log("Hello world!");
+        $("#hello-js").click(function () {
+            $(this).addClass("test-font-weight");
+        });
+
+        $("#div-js").attr({
+            "href": "www.chinaweal.com.cn",
+            "value": "hello atr"
+        }).click(function () {
+            console.log($(this).attr("href"));
+        }).dblclick(function () {
+            console.log($(this).attr("value"));
+        });
+
+        $("input[value=ChangePosition]").click(function () {
+            $("#first").appendTo($("#second"));
+        });
+
+        $("button[name=buttonName]").click(function(){
+            console.log(this.value);
+        });
+
+    });
+    $(window).on("load", function () {
+        console.log("window load.");
+    });
+
+    if ($("#div-js").length) {
+        alert("is not empty.");
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Traversing Demo</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<p>
+    Day 4, <a href="http://learn.jquery.com/using-jquery-core/traversing/">Traversing Demo.</a>
+</p>
+
+<div class="grandparent">
+    <div class="parent">
+        <div class="child">
+            <span class="subchild"></span>
+        </div>
+    </div>
+    <div class="surrogateParent1"></div>
+    <div class="surrogateParent2"></div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        var $subChild = $("span.subchild");     //Initial selection
+        if ($subChild.length) {
+            var $parent = $subChild.parent();
+            var $parents = $subChild.parents(); //
+            var $parentsUntil = $subChild.parentsUntil("div.grandparent");
+            var $closest = $subChild.closest("div");
+        }
+    });
+</script>
+</html>
